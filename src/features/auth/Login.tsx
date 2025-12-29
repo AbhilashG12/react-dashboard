@@ -1,13 +1,14 @@
 import {motion} from "framer-motion"
 import {FaEye,FaEyeSlash} from "react-icons/fa"
-import { useState } from "react"
+import {  useState } from "react"
 import {Link,useNavigate} from "react-router-dom"
 import {users} from "../users/users"
+import { useAuth } from "./AuthContext"
 
 
 const Login = () => {
   const navigate = useNavigate()
-
+  const {login} = useAuth()
   const [show,setShow] = useState<boolean>(true);
   const [mail,setMail] = useState("");
   const [pass,setPass] = useState("")
@@ -15,6 +16,7 @@ const Login = () => {
   const handleLogin =(mail:string,pass:string)=>{
     const user = users.find(user=>mail==user.email && user.password==pass)
     if(user){
+      login(mail,pass)
       navigate("/dashboard")
     }else{
       alert("Cannot Find User")
@@ -24,7 +26,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center mt-30">
-      <motion.div className="border flex flex-col w-110 h-120 rounded-xl shadow-xl bg-gray-50" whileHover={{scale:1.1}} initial={{ opacity: 0, x: 100 }}
+      <motion.div className="border flex flex-col w-110 h-120 rounded-xl shadow-xl bg-gray-50" initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}

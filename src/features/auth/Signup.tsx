@@ -30,7 +30,7 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center mt-30">
-      <motion.div className="border flex flex-col w-110 h-130 rounded-xl shadow-xl bg-gray-50" whileHover={{scale:1.1}} initial={{ opacity: 0, x: 100 }}
+      <motion.div className="border flex flex-col w-110 h-130 rounded-xl shadow-xl bg-gray-50" initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}

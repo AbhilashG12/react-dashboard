@@ -7,7 +7,7 @@ const STORAGE_KEY = 'user';
 interface Auth {
     email : string,
     fullname : string,
-    // password : string,
+
 }
 interface AuthContext {
     user : Auth | null,
@@ -17,7 +17,7 @@ interface AuthContext {
 
 const AuthCntxt = createContext<AuthContext|null>(null);
 
-const AuthContext = ({children}:{children:React.ReactNode}) => {
+export const AuthContext = ({children}:{children:React.ReactNode}) => {
 
     const [user,setUser] = useState<Auth|null>(()=>{
         const stored = localStorage.getItem(STORAGE_KEY)
@@ -26,12 +26,11 @@ const AuthContext = ({children}:{children:React.ReactNode}) => {
 
     const login =(email:string,password:string):boolean=>{
         const found = users.find(user=>user.email==email&&user.password==password)
-
+        console.log("user found")
         if(!found) return false
 
         const authUser : Auth = {
             email : found.email,
-            // password : found.password
             fullname : found.fullname
         }
         
