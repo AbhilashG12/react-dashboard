@@ -7,7 +7,7 @@ import { AuthContext } from './features/auth/AuthContext.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthContext>
-      <App />
+      <App  />
     </AuthContext>
   </StrictMode>,
 )

@@ -1,18 +1,18 @@
-import Sidebar from "./Sidebar"
+// import Sidebar from "./Sidebar"
+import UsersPage from "../../features/users/UsersPage"
+import DashView from "./DashView"
 import Navbar from "./Navbar"
-import { useAuth } from "../../features/auth/AuthContext"
+
 
 const Dashboard = () => {
 
-  const {user} = useAuth();
     
   return (
     <div>
         <Navbar/>
-        <div>
-          <h1>Hello there {user?.fullname}</h1>
-        </div>
-        <Sidebar/>
+        <DashView/>
+        <UsersPage/>
+        {/* <Sidebar/> */}
     </div>
   )
 }

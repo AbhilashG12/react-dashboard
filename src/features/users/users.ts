@@ -2,7 +2,8 @@ export interface Users {
     fullname : string,
     email : string,
     password : string,
-    confirmPassword : string
+    confirmPassword : string,
+    
 }
 
 export const users : Users[] = [

@@ -10,9 +10,8 @@ const Navbar = () => {
 
   return (
     <nav className=" border-gray-500 rounded-4xl shadow-xl mt-5 bg-gray-200 flex flex-row h-20">
-        <ul className=" p-4 ml-5 flex flex-row gap-110 mt-2">
+        <ul className=" p-4 ml-5 flex flex-row gap-270 mt-2">
             <h1 className="text-2xl font-bold font-serif ">Welcome to Dashboard</h1>
-            <input className="border rounded-xl h-9 bg-white shadow pl-2 ml-10 " type="search" placeholder="Search here . . . ." />
             <button onClick={()=>{handleLogout()}} className="border h-10 w-20 rounded bg-blue-100 cursor-pointer hover:bg-white">Logout</button>
         </ul>
     </nav>
